@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod 
+metadata:
+  name: roboshop-catalogue
+  labels:
+    environment: dev
+    project: roboshop
+    note: "Labelsdonotallowspecialchars"
+spec:
+  containers:
+    - name: labels-pod
+      image:  mrmotam/catalogue:v1
+      ports:
+      - containerPort: 8080
