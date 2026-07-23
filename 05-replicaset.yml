@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata: # labels for the replicaset
+  name: rs-demo
+  labels:
+    app: web
+    env: testing
+    project: roboshop
+  annotations:
+    imageRestry: "https://k8s.io/"
+spec:
+  replicas: 3
+  selector: # This is the selecting criteria for replicaset to pick the pods with following selector labels
+    matchLabels:
+      app: web
+      env: testing
+      project: roboshop
+  template: #This is the pod definition, labels under this section will be applied to pod
+    metadata:
+      labels:
+        project: roboshop
+        app: web
+        env: testing
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.24
