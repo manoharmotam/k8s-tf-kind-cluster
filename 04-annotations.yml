@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: annotations-test
+  namespace: roboshop
+  labels:
+    project: mrmotam
+    environment: dev
+  annotations:
+    imageRegistry: "{userName: Manohar, Age: 35}"
+spec:
+  containers:
+  - name: annotations-test
+    image: nginx:1.24
