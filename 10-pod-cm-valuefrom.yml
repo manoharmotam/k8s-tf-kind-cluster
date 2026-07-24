@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cm-pod-valuefrom
+  labels:
+    app.kubernetes.io/name: cm-pod-valuefrom
+spec:
+  containers:
+  - name: cm-pod-valuefrom
+    image: nginx
+    resources:
+      requests:
+        memory: "120Mi"
+        cpu: "200m"
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    env:
+    - name: MONGODB
+      valueFrom:
+        configMapKeyRef:
+          name: test-cm
+          key: catalogue.service
+    - name: PROJECT
+      valueFrom:
+        configMapKeyRef:
+          name:  test-cm
+          key: project
