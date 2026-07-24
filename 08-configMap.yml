@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: test-cm
+  labels:
+    app: web-app
+    image: nginx
+    env: test
+data:
+  project: ROBOSHOP
+  environment: DEV
+  createdBy: MANOHAR
+
+  catalogue.service: |
+    MONGODB=mongodb://127.0.0.1:27017/myDatabase
+    MONGO=True
+
