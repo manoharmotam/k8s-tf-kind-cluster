@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: env-pod
+  labels:
+    project: roboshop
+    environment: test
+spec:
+  containers:
+    - image: nginx
+      name:  nginx
+      restartPolicy: Never
+      resources:
+        limits: 
+          cpu: "100m"
+          memory: "64Mi"
+        requests: 
+          cpu: "90m"
+          memory: "56Mi"
+      env:
+      - name: APP
+        value: "WEB-USER"
+      - name: ENV
+        value: "WEB-DEV"
