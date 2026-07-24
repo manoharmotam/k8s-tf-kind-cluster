@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cm-pod
+  labels:
+    app.kubernetes.io/name: cm-pod
+spec:
+  containers:
+  - name: cm-pod
+    image: nginx
+    resources:
+      requests:
+        memory: "120Mi"
+        cpu: "400m"
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    envFrom:
+    - configMapRef:
+        name: test-cm
+        
