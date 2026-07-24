@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: depl-example
+  labels:
+    project: roboshop
+    environment: testing
+  annotations:
+    imageRegistry: "https://hub.docker.com/mrmotam"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      project: roboshop
+      environment: testing
+  template:
+    metadata:
+      labels:
+        project: roboshop
+        environment: testing
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.24
+      
