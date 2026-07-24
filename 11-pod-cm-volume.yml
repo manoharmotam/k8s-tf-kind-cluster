@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cm-pod-file
+  labels:
+    app.kubernetes.io/name: cm-pod-file
+spec:
+  containers:
+  - name: cm-pod-file
+    image: nginx
+    resources:
+      requests:
+        memory: "100Mi"
+        cpu: "200m"
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    volumeMounts:
+    - name:  test-cm
+      mountPath:  /home/test.conf
+      readOnly: true
+  volumes:
+    - name:  test-cm
+      configMap:
+        name:  test-cm
