@@ -6,5 +6,11 @@ By default KIND does not have LoadBalancer Service. You may need to install clou
 
 ## Follow below Instructions to download and Setup cloud-provider-kind on github codespace
 
+### Prerequisites
 
+Make sure you have:
+- Docker
++ Kind
+* kubectl
+* Go or download the prebuilt binary
 
