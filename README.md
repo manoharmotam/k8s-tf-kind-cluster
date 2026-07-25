@@ -19,7 +19,7 @@ kind --version
 kubectl version --client
 ```
 
-1. Install using Go
+1. Install using GO.
 ``` 
 go install sigs.k8s.io/cloud-provider-kind@latest 
 ```
@@ -29,15 +29,15 @@ go install sigs.k8s.io/cloud-provider-kind@latest
 export PATH=$PATH:$(go env GOPATH)/bin 
 ```
 
-3. Verify
+3. Verify.
 ``` 
 cloud-provider-kind --help 
 ```
 
-4. Install is completed
+4. Install is completed.
 
 ### Start the cloud-provider-kind
-Start Cloud Provider KIND
+Start Cloud Provider KIND in a separate terminal - you can monitor the controller logs in the same terminal.
 ``` 
 cloud-provider-kind 
 ```
