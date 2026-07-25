@@ -20,4 +20,28 @@ kubectl version --client
 ```
 
 1. Install using Go
-`go install sigs.k8s.io/cloud-provider-kind@latest`
+``` go install sigs.k8s.io/cloud-provider-kind@latest ```
+
+2. Add the GO binary to your **PATH**
+``` export PATH=$PATH:$(go env GOPATH)/bin ```
+
+3. Verify
+``` cloud-provider-kind --help ```
+
+4. Install is completed
+
+### Start the cloud-provider-kind
+Start Cloud Provider KIND
+``` cloud-provider-kind ```
+
+### Deploy an Application & expose it as load balancer
+```
+# create the deployment
+kubectl create deployment nginx --image=nginx
+
+# Create the Load Balancer Service
+kubectl expose deployment nginx \
+  --port=80 \
+  --target-port=80 \
+  --type=LoadBalancer
+```
