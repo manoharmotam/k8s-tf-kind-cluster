@@ -8,7 +8,7 @@ By default KIND does not have LoadBalancer Service. You may need to install clou
 
 ### Prerequisites
 
-<ins>** Make sure you have: **</ins>
+***<ins>Make sure you have:</ins>***
 * Docker
 * Kind
 * kubectl
@@ -19,4 +19,5 @@ kind --version
 kubectl version --client
 ```
 
-1. 14
+1. Install using Go
+`go install sigs.k8s.io/cloud-provider-kind@latest`
