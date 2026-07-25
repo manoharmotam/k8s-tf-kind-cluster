@@ -7,6 +7,7 @@ metadata:
     env: testing
     app: web-app
 spec:
+  type: ClusterIP # this the default type. SVC picks cluster ip as type even if its not mentioned
   selector:
     project: roboshop
     env: testing
