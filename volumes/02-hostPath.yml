@@ -37,5 +37,3 @@ spec:
     hostPath:
       path: /var/log
       type: Directory
-
-      -
