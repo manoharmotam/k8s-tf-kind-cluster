@@ -36,7 +36,7 @@ spec:
     topology.kubernetes.io/zone: us-east-1b
   volumes:
   - name: persistent-store
-    PersistentVolumeClaim:
+    persistentVolumeClaim:
       claimName: static-ebs-pvc
   containers:
   - name: nginx
