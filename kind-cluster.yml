@@ -7,6 +7,9 @@ nodes:
   - containerPort: 31000
     hostPort: 8080
     listenAddress: 0.0.0.0
+  extraMounts:
+  - hostPath: /workspaces/k8s-tf-kind-cluster/rancher-volumes
+    containerPath: /opt/local-path-provisioner
 - role: worker
   image: kindest/node:v1.35.0@sha256:4613778f3cfcd10e615029370f5786704559103cf27bef934597ba562b269661
 - role: worker
