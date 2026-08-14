@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: sample-ds
+  labels:
+    poc: daemonset
+spec:
+  selector:
+    matchLabels:
+      poc: daemonset
+  template:
+    metadata:
+      labels:
+        poc: daemonset
+    spec:
+      containers:
+      - name: python-app
+        image: mrmotam/pyapp:0.1.0
+        command: ["python", "-m", "http.server", "5678"]
+        ports:
+        - name: py-port
+          containerPort: 5678
+        imagePullPolicy: Always
